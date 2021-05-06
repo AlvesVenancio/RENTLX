@@ -1,0 +1,40 @@
+
+
+*construir container
+docker build -t rentx .
+
+*executar docker na porta 3333
+docker run -p 3333:3333 rentx
+
+*parar execução de um container
+docker stop [id do container]
+
+*deletar container
+docker rm [id do container]
+
+*listar containers em execução
+docker ps [-a (usar esse parametro para listar containers q n estão rodando)]
+
+*entrar no container em execução (ctrl+D para sair da execução)
+docker exec -it [nome do container] /bin/bash
+
+
+DOCKER COMPOSE
+
+*rodar container com 'fastreload'
+docker-compose up
+
+*para rodar em back (continuar rodando msm q o terminal seja fechado)
+docker-compose up -d
+
+*parar container
+docker-compose stop
+
+*deletar container
+docker-compose down
+
+*para ver os logs
+docker logs [nome do container] -f
+
+ALGUNS COMANDOS
+
