@@ -1,9 +1,8 @@
-import { v4 as uuidV4 } from 'uuid';
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import { v4 as uuidV4 } from 'uuid';
 
-@Entity('specifications')
-class Specification {
-    
+@Entity('categories')
+class Category {
     @PrimaryColumn()
     id?: string;
 
@@ -23,4 +22,4 @@ class Specification {
     }
 }
 
-export { Specification };
+export { Category };

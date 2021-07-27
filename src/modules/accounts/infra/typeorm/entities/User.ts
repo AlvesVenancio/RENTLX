@@ -1,9 +1,8 @@
-import { v4 as uuidV4 } from 'uuid';
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import { v4 as uuidV4 } from 'uuid';
 
-@Entity('users') //Define a entidade como users
+@Entity('users') // Define a entidade como users
 class User {
-
     @PrimaryColumn()
     id: string;
 
@@ -26,10 +25,10 @@ class User {
     avatar: string;
 
     @CreateDateColumn()
-    created_at: Date;    
+    created_at: Date;
 
     constructor() {
-        if(!this.id) {
+        if (!this.id) {
             this.id = uuidV4();
         }
     }

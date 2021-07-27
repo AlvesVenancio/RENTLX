@@ -2,7 +2,7 @@ import csvParse from 'csv-parse';
 import fs from 'fs';
 import { inject, injectable } from 'tsyringe';
 
-import { CategoriesRepository } from '@modules/cars/repositories/implementations/CategoriesRepository';
+import { CategoriesRepository } from '@modules/cars/infra/typeorm/repositorioes/CategoriesRepository';
 
 interface IImportCategory {
     name: string;
@@ -49,7 +49,9 @@ class ImportCategoryUseCase {
         categories.map(async (category) => {
             const { name, description } = category;
 
-            const existCategory = await this.categoriesRepository.findByName(name);
+            const existCategory = await this.categoriesRepository.findByName(
+                name
+            );
 
             if (!existCategory) {
                 await this.categoriesRepository.create({
